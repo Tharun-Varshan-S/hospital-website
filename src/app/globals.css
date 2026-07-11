@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F8F9FB;
+  --foreground: #1E293B;
+  
+  /* Accent Colors */
+  --primary-accent: #0D9488; /* Premium Deep Teal */
+  --primary-accent-hover: #0F766E;
+  --secondary-accent: #10B981; /* Emerald Green */
+  --light-gray: #EEF2F7;
+  
+  /* Glow Effects */
+  --glow-teal: rgba(13, 148, 136, 0.15);
+  --glow-emerald: rgba(16, 185, 129, 0.15);
+  --glow-purple: rgba(168, 85, 247, 0.15);
+  --glow-blue: rgba(59, 130, 246, 0.12);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-accent: var(--primary-accent);
+  --color-primary-accent-hover: var(--primary-accent-hover);
+  --color-secondary-accent: var(--secondary-accent);
+  --color-light-gray: var(--light-gray);
+  --font-sans: var(--font-outfit);
+}
+
+/* Base resets & typography */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.02),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8),
+    0 1px 3px rgba(0, 0, 0, 0.01);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 12px 40px rgba(13, 148, 136, 0.06),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+/* Navbar glass */
+.glass-nav {
+  background: rgba(248, 249, 251, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Elegant Gradients & Glow Blobs */
+.glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+  animation: blob-float 10s ease-in-out infinite alternate;
+}
+
+.glow-teal-blob {
+  background: var(--glow-teal);
+}
+
+.glow-emerald-blob {
+  background: var(--glow-emerald);
+}
+
+.glow-purple-blob {
+  background: var(--glow-purple);
+}
+
+.glow-blue-blob {
+  background: var(--glow-blue);
+}
+
+/* Animations */
+@keyframes blob-float {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+/* Subtle border glow animation */
+@keyframes border-glow {
+  0%, 100% {
+    border-color: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+  }
+  50% {
+    border-color: rgba(13, 148, 136, 0.25);
+    box-shadow: 0 4px 30px rgba(13, 148, 136, 0.05);
+  }
+}
+
+.glow-card-pulse {
+  animation: border-glow 8s ease-in-out infinite;
+}
+
+/* Text mask gradients */
+.gradient-text {
+  background: linear-gradient(135deg, #0F172A 30%, #0D9488 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
