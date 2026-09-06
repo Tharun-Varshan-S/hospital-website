@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Cinzel } from "next/font/google";
+import SecurityGuardian from "@/components/SecurityGuardian";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "MedCrest | Advanced Healthcare for Every Generation",
-  description: "Experience premium, modern healthcare with MedCrest. 24/7 support, qualified specialists, and advanced medical technology.",
+  title: "Hearing Home Hospital | Advanced Healthcare",
+  description: "Experience premium, modern healthcare. 24/7 support, qualified specialists, and advanced medical technology.",
 };
 
 export default function RootLayout({
@@ -21,9 +22,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} h-full antialiased`}
+      className={`${cinzel.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <SecurityGuardian />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,60 +1,64 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { EXTERNAL_LINKS } from "@/config/links";
 
 export default function Navbar() {
   return (
-    <header className="glass-nav sticky top-0 z-50 w-full px-6 py-4 md:px-12">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-slate-100 px-6 py-5 md:px-12 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2.5 cursor-pointer group">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary-accent to-secondary-accent shadow-md transition-all duration-300 group-hover:scale-105">
-            {/* Styled Architectural Medical Cross logo */}
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2.5" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              className="h-5 w-5 text-white"
-            >
-              <path d="M12 5v14" />
-              <path d="M5 12h14" />
-            </svg>
-            <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          </div>
-          <span className="text-xl font-bold tracking-tight text-slate-800 transition-colors group-hover:text-primary-accent">
-            Med<span className="font-light text-slate-500">Crest</span>
-          </span>
-        </div>
+        <a href="/" className="flex items-center cursor-pointer transition-opacity hover:opacity-90">
+          <Image 
+            src="/images/full-logo.png" 
+            alt="Hearing Home Hospital - Since 1965"
+            width={240}
+            height={80}
+            className="h-10 w-auto md:h-14 object-contain"
+            priority
+          />
+        </a>
 
-        {/* Minimal Nav Menu Placeholders */}
-        <nav className="hidden items-center gap-8 md:flex">
-          {["Departments", "Specialists", "Facilities", "Technology", "About Us"].map((item) => (
-            <a
-              key={item}
-              href="#"
-              onClick={(e) => e.preventDefault()}
-              className="relative text-sm font-medium text-slate-500 transition-colors hover:text-slate-800"
+        {/* Minimal Nav Menu */}
+        <nav className="hidden items-center gap-8 lg:flex">
+          {[
+            { label: "Home", path: "/" },
+            { label: "About Us", path: "/about" },
+            { label: "Gallery", path: "/gallery" },
+            { label: "Contact Us", path: "/contact" },
+          ].map((item) => (
+            <Link
+              key={item.label}
+              href={item.path}
+              className="relative text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
         </nav>
 
-        {/* CTA Placeholder */}
-        <div className="flex items-center gap-4">
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
-            className="hidden text-sm font-semibold text-slate-700 transition-colors hover:text-primary-accent sm:block"
+        {/* CTA Actions */}
+        <div className="flex items-center gap-6">
+          <Link
+            href="/contact"
+            className="hidden text-sm font-semibold text-slate-600 transition-colors hover:text-slate-900 md:block"
           >
             Emergency Contact
+          </Link>
+          <a 
+            href={EXTERNAL_LINKS.BOOK_APPOINTMENT}
+            className="hidden md:inline-flex items-center justify-center rounded bg-primary-accent px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-teal-700"
+          >
+            Book Appointment
           </a>
-          <button className="relative hidden overflow-hidden rounded-full bg-slate-800 px-6 py-2 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-slate-900 hover:shadow-md md:block">
-            Portal
+          
+          {/* Mobile menu button (visual only for now) */}
+          <button className="lg:hidden text-slate-900">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
           </button>
         </div>
       </div>

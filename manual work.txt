@@ -1,0 +1,139 @@
+VERY IMPORTANT: Manual Work You Need To Do
+
+Yes. Some things cannot/shouldn't be automated by coding alone.
+
+You should prepare these manually before the relevant phase.
+
+1. Hospital information
+
+You need the actual:
+
+Hospital name Hearing Home Hospital
+Address No. 383, Cross Cut Rd, near Indian Petroal Bunk, Peranaidu Layout, Ram Nagar, Gandhipuram, Coimbatore, Tamil Nadu 641012
+Phone numbers 9842273007,9698473007
+Email thegiriandco@gmail.com
+Opening hours 11:00 AM -2:00 PM
+Departments 
+Services 
+Founder information Dr. Samigiri Siddhar
+Achievements 
+About text
+
+Otherwise we'll end up putting fake placeholder data.
+
+2. Images
+
+You need to manually provide/select:
+
+Hospital logo
+Founder photo
+Hospital photos
+Doctor photos
+Facility photos
+Gallery images
+Ear-related images/illustrations
+Branch photos
+Achievement photos/certificates
+
+This is one of the biggest manual inputs.
+
+3. Branch information
+
+For every branch, collect:
+
+Branch name
+Full address
+Latitude
+Longitude
+Phone
+Opening hours
+Google Maps/location information
+
+Then we can build the geolocation functionality around real data.
+
+4. Doctor information
+
+If appointment booking includes doctors, manually collect:
+
+Doctor name
+Specialization
+Department
+Qualification
+Experience
+Photo
+Available days
+Working hours
+Branch
+
+This becomes database data.
+
+5. Appointment rules
+
+You need to decide these manually.
+
+For example:
+
+How many appointments per slot?
+15 min / 30 min / 1 hour?
+Can patient cancel?
+How many hours before appointment?
+Can admin reschedule?
+Can patient choose doctor?
+Can patient choose branch?
+
+These are business decisions, not programming decisions.
+
+6. Medical-record rules
+
+You need to decide:
+
+Who can create records?
+Who can edit?
+Can patient delete?
+Can admin delete?
+Can patient download?
+Can doctors see all patients?
+
+Because this is sensitive information, we shouldn't randomly decide these.
+
+7. Authentication decisions
+
+Decide:
+
+Patient:
+Email/password?
+Phone/OTP?
+
+Admin:
+Email/password?
+Separate admin login?
+
+For an internship project, email/password is usually much simpler to implement first.
+
+8. Payment
+
+Your current audit says:
+
+Payments: 0%
+
+But your enhancement list doesn't actually require payment.
+
+So don't add Razorpay just because it's technically impressive.
+
+If the hospital actually needs:
+
+Consultation
+ ↓
+Appointment
+ ↓
+Payment
+ ↓
+Confirmation
+
+then add it.
+
+Otherwise:
+
+Leave payment out of V1.
+
+This saves a lot of unnecessary complexity.

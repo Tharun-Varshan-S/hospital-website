@@ -24,14 +24,14 @@
   --color-primary-accent-hover: var(--primary-accent-hover);
   --color-secondary-accent: var(--secondary-accent);
   --color-light-gray: var(--light-gray);
-  --font-sans: var(--font-outfit);
+  --font-sans: var(--font-cinzel);
 }
 
 /* Base resets & typography */
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-cinzel), serif;
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
@@ -159,6 +159,7 @@ body {
 .gradient-text {
   background: linear-gradient(135deg, #0F172A 30%, #0D9488 90%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
