@@ -14,9 +14,9 @@ export default function Navbar() {
           <Image 
             src="/images/full-logo.png" 
             alt="Hearing Home Hospital - Since 1965"
-            width={240}
-            height={80}
-            className="h-10 w-auto md:h-14 object-contain"
+            width={320}
+            height={100}
+            className="h-14 w-auto md:h-20 object-contain"
             priority
           />
         </a>
@@ -41,12 +41,6 @@ export default function Navbar() {
 
         {/* CTA Actions */}
         <div className="flex items-center gap-6">
-          <Link
-            href="/contact"
-            className="hidden text-sm font-semibold text-slate-600 transition-colors hover:text-slate-900 md:block"
-          >
-            Emergency Contact
-          </Link>
           <a 
             href={EXTERNAL_LINKS.BOOK_APPOINTMENT}
             className="hidden md:inline-flex items-center justify-center rounded bg-primary-accent px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-teal-700"

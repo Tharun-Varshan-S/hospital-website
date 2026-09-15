@@ -143,7 +143,7 @@ export default function TestimonialSection() {
   const secondItem = testimonials[secondIndex];
 
   return (
-    <section className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-50 py-20 md:py-28 overflow-hidden border-t border-b border-slate-200/60">
+    <section className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-50 py-20 md:py-28 overflow-hidden border-b border-slate-200">
       
       {/* Background Decorative Accents (Light Neutral / Warm Amber-Teal) */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-teal-100/30 rounded-full blur-3xl pointer-events-none -z-0" />
