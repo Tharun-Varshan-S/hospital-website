@@ -3,13 +3,15 @@
 :root {
   --background: #F8F9FB;
   --foreground: #1E293B;
-  
+
   /* Accent Colors */
-  --primary-accent: #0D9488; /* Premium Deep Teal */
+  --primary-accent: #0D9488;
+  /* Premium Deep Teal */
   --primary-accent-hover: #0F766E;
-  --secondary-accent: #10B981; /* Emerald Green */
+  --secondary-accent: #10B981;
+  /* Emerald Green */
   --light-gray: #EEF2F7;
-  
+
   /* Glow Effects */
   --glow-teal: rgba(13, 148, 136, 0.15);
   --glow-emerald: rgba(16, 185, 129, 0.15);
@@ -43,7 +45,7 @@ body {
   backdrop-filter: blur(16px) saturate(120%);
   -webkit-backdrop-filter: blur(16px) saturate(120%);
   border: 1px solid rgba(255, 255, 255, 0.55);
-  box-shadow: 
+  box-shadow:
     0 4px 30px rgba(0, 0, 0, 0.02),
     inset 0 1px 1px rgba(255, 255, 255, 0.8),
     0 1px 3px rgba(0, 0, 0, 0.01);
@@ -54,7 +56,7 @@ body {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.55);
   border-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 
+  box-shadow:
     0 12px 40px rgba(13, 148, 136, 0.06),
     inset 0 1px 1px rgba(255, 255, 255, 0.9);
 }
@@ -100,18 +102,23 @@ body {
   0% {
     transform: translate(0px, 0px) scale(1);
   }
+
   50% {
     transform: translate(30px, -40px) scale(1.1);
   }
+
   100% {
     transform: translate(-20px, 20px) scale(0.9);
   }
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -127,9 +134,12 @@ body {
 }
 
 @keyframes float-slow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
+
   50% {
     transform: translateY(-15px) rotate(2deg);
   }
@@ -141,10 +151,13 @@ body {
 
 /* Subtle border glow animation */
 @keyframes border-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     border-color: rgba(255, 255, 255, 0.55);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
   }
+
   50% {
     border-color: rgba(13, 148, 136, 0.25);
     box-shadow: 0 4px 30px rgba(13, 148, 136, 0.05);
@@ -163,3 +176,19 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Interactive Text Hover Effect */
+.hover-text-green {
+  transition: color 0.3s ease-out;
+}
+
+.hover-text-green:hover {
+  color: var(--primary-accent) !important;
+}
+
+.hover-text-green-footer {
+  transition: color 0.3s ease-out;
+}
+
+.hover-text-green-footer:hover {
+  color: var(--primary-accent) !important;
+}

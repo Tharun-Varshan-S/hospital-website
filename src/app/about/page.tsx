@@ -39,8 +39,8 @@ export default function AboutPage() {
         <section className="flex flex-col gap-8">
           <h2 className="text-3xl font-bold text-slate-800">Meet Our Founder</h2>
           <div className="flex flex-col md:flex-row gap-8 items-start bg-white/40 border border-slate-200/60 p-8 rounded-3xl backdrop-blur-md">
-            <div className="w-full md:w-1/3 aspect-[3/4] bg-slate-200 rounded-2xl flex items-center justify-center overflow-hidden relative">
-              <span className="text-slate-400 font-medium">Founder Photo Placeholder</span>
+            <div className="w-full md:w-1/3 aspect-[3/4] bg-slate-200 rounded-2xl flex items-center justify-center overflow-hidden relative border border-slate-200/60">
+              <img src="/images/about-portrait.png" alt="Dr. John Doe" className="w-full h-full object-cover object-top" />
             </div>
             <div className="flex flex-col gap-4 flex-1">
               <div>
