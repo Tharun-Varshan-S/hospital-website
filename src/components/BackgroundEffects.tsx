@@ -33,7 +33,7 @@ export default function BackgroundEffects() {
             <stop offset="100%" stopColor="rgba(168, 85, 247, 0.05)" />
           </linearGradient>
         </defs>
-        
+
         {/* Curving grid lines or connection paths */}
         <path
           d="M-100,200 C300,100 600,400 1200,250 C1600,150 1800,500 2100,400"

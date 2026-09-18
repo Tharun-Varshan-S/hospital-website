@@ -154,15 +154,9 @@ export default function TestimonialSection() {
         {/* Header & Live Running Status */}
         <div className="flex flex-col items-center text-center gap-4 mb-14">
           
-          {/* Live Patient Feedback Badge */}
-          <div className="inline-flex items-center gap-2.5 rounded-full bg-emerald-50 border border-emerald-200/80 px-4 py-1.5 shadow-xs">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
-            </span>
-            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
-              Live Patient Feedback
-            </span>
+          <div className="flex items-center gap-4">
+            <div className="w-8 h-px bg-teal-800" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-teal-800">Testimonials</span>
           </div>
 
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
@@ -179,13 +173,7 @@ export default function TestimonialSection() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Progress Bar showing active timer */}
-          <div className="w-full bg-slate-200/70 h-1 rounded-full mb-8 overflow-hidden">
-            <div 
-              className="bg-teal-700 h-full transition-all duration-100 ease-linear"
-              style={{ width: `${isPaused ? progress : progress}%` }}
-            />
-          </div>
+          <div className="mb-8"></div>
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 min-h-[320px]">
@@ -250,29 +238,7 @@ export default function TestimonialSection() {
           {/* Controls Bar: Prev/Next & Dots */}
           <div className="flex items-center justify-between mt-10 px-2">
             
-            {/* Live Pause Indicator */}
-            <div className="text-xs text-slate-500 flex items-center gap-2">
-              <button
-                onClick={() => setIsPaused(!isPaused)}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-medium transition-colors text-xs shadow-2xs"
-              >
-                {isPaused ? (
-                  <>
-                    <svg className="w-3.5 h-3.5 text-teal-700" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                    <span>Resume Auto-Play</span>
-                  </>
-                ) : (
-                  <>
-                    <svg className="w-3.5 h-3.5 text-amber-600" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                    </svg>
-                    <span>Hover or Click to Pause</span>
-                  </>
-                )}
-              </button>
-            </div>
+            <div className="hidden sm:block"></div>
 
             {/* Pagination Dot Indicators */}
             <div className="flex items-center gap-2">

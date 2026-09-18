@@ -12,30 +12,32 @@ export default function Navbar() {
     { label: "Home", path: "/" },
     { label: "About Us", path: "/about" },
     { label: "Gallery", path: "/gallery" },
+    { label: "Contact Us", path: "/contact" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-12">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-slate-200 transition-all">
+      <div className="w-full flex items-center justify-between px-6 py-4 lg:px-12">
         {/* Logo */}
-        <a href="/" className="flex items-center cursor-pointer transition-opacity hover:opacity-90">
-          <Image 
+        <a href="/" className="flex items-center cursor-pointer transition-opacity hover:opacity-90 shrink-0">
+          <img 
             src="/images/full-logo.png" 
             alt="Hearing Home Hospital - Since 1965"
-            width={320}
-            height={100}
-            className="h-10 w-auto md:h-14 lg:h-20 object-contain"
-            priority
+            className="h-12 md:h-16 lg:h-[72px] object-contain"
           />
         </a>
 
         {/* Minimal Nav Menu */}
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex absolute left-1/2 -translate-x-1/2">
           {navLinks.map((item) => (
             <Link
               key={item.label}
               href={item.path}
-              className="relative text-sm font-medium text-slate-600 transition-colors hover-text-green"
+              className={`relative text-sm font-semibold transition-colors uppercase tracking-wide ${
+                item.label === "Home" 
+                  ? "text-teal-700 after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-teal-700" 
+                  : "text-slate-600 hover:text-teal-700"
+              }`}
             >
               {item.label}
             </Link>
@@ -43,12 +45,14 @@ export default function Navbar() {
         </nav>
 
         {/* CTA Actions */}
-        <div className="flex items-center gap-4 lg:gap-6">
+        <div className="flex items-center gap-4 lg:gap-6 shrink-0">
           <Link 
-            href="/contact"
-            className="hidden md:inline-flex items-center justify-center rounded bg-teal-800 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-teal-900"
+            href={EXTERNAL_LINKS.BOOK_APPOINTMENT}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center justify-center rounded bg-teal-800 px-7 py-3 text-sm font-bold uppercase tracking-wider text-white transition-colors hover:bg-teal-900"
           >
-            Contact Us
+            BOOK APPOINTMENT &rarr;
           </Link>
           
           {/* Mobile menu button */}
@@ -82,11 +86,13 @@ export default function Navbar() {
             </Link>
           ))}
           <Link 
-            href="/contact"
+            href={EXTERNAL_LINKS.BOOK_APPOINTMENT}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded bg-teal-800 px-6 py-3 mt-2 text-sm font-medium text-white transition-colors hover:bg-teal-900 w-full"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Contact Us
+            BOOK APPOINTMENT &rarr;
           </Link>
         </nav>
       )}
